@@ -1,3 +1,73 @@
-<h1> homepage </h1>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">LoL Oce Boost</a>
 
-<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Contact</a></li>
+            <% if user_signed_in? %>
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+            <% else %>
+                <li class="pure-menu-item"><a href="<%= '/users/sign_in'%>" class="pure-menu-link">Log in</a></li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+
+<%# <div class="splash-container">
+    <div class="splash">
+        <form class = "pure-form pure-form-aligned">
+            <div class = "pure-control-group">      
+               <label for = "current_lp">Current LP</label>
+               <input id = "current_lp" type = "select">
+                <option value = '0'>Bronze</option>
+                <option value = 'test'>Bronze</option>
+            </div> %>
+
+<div class="splash-container">
+<div class="splash">
+<h5 class="text-center">Current Rank</h5>
+<select name="startdivision" id="startdivision" class="browser-default div-boost">
+<option value="0">Bronze</option>
+<option selected="" value="1">Silver</option>
+<option value="2">Gold</option>
+<option value="3">Platinum</option>
+<option value="4">Diamond</option>
+</select>
+<select name="startrank" id="startrank" class="browser-default div-boost">
+<option value="0">V</option>
+<option value="1">IV</option>
+<option value="2">III</option>
+<option value="3">II</option>
+<option value="4">I</option>
+</select>
+<select name="startpoints" id="startpoints" class="browser-default div-boost">
+<option value="0">0-20 LP</option>
+<option value="1">21-40 LP</option>
+<option value="2">41-60 LP</option>
+<option value="3">61-80 LP</option>
+<option value="4">81-100 LP</option>
+</select>
+
+            
+<h5 class="text-center">Desired Rank</h5>
+<div class="select-container">
+<select name="enddivision" id="enddivision" class="browser-default div-boost">
+<option value="0">Bronze</option>
+<option selected="" value="1">Silver</option>
+<option value="2">Gold</option>
+<option value="3">Platinum</option>
+<option value="4">Diamond</option>
+<option value="5">Master</option>
+</select>
+<select name="endrank" id="endrank" class="browser-default div-boost">
+<option value="0">V</option>
+<option selected="" value="1">IV</option>
+<option value="2">III</option>
+<option value="3">II</option>
+<option value="4">I</option>
+</select>
+</div>
+</div>        
+    </div>
+</div>
